@@ -1,7 +1,7 @@
 ---
-title: "Database Types"
+title: "database types explained"
 date: 2018-02-10T21:07:36+02:00
-draft: false
+tags: ["databases", "sql", "nosql"]
 ---
 
  Until recently I only worked with relational databases, namely PostgreSQL, and I
