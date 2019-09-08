@@ -2,11 +2,7 @@ import cdk = require('@aws-cdk/core');
 import s3deploy = require('@aws-cdk/aws-s3-deployment');
 import s3 = require('@aws-cdk/aws-s3');
 import cloudfront = require('@aws-cdk/aws-cloudfront');
-import route53 = require('@aws-cdk/aws-route53');
-import alias = require('@aws-cdk/aws-route53-targets');
 import { Bucket } from '@aws-cdk/aws-s3';
-import { HostedZone } from '@aws-cdk/aws-route53';
-
 
 export class AwsStack extends cdk.Stack {
 	constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -57,13 +53,6 @@ export class AwsStack extends cdk.Stack {
 			source: s3deploy.Source.asset('../public'),
 			destinationBucket: BlogBucket,
 			distribution,
-		});
-
-		const zone = HostedZone.fromHostedZoneId(this, 'HostedZone', 'Z1PKIH7T9HAX77');
-
-		new route53.ARecord(this, 'AliasRecord', {
-			zone,
-			target: route53.RecordTarget.fromAlias(new alias.CloudFrontTarget(distribution)),
 		});
 	}
 }
