@@ -2,6 +2,7 @@ import cdk = require('@aws-cdk/core');
 import s3deploy = require('@aws-cdk/aws-s3-deployment');
 import s3 = require('@aws-cdk/aws-s3');
 import cloudfront = require('@aws-cdk/aws-cloudfront');
+import { Bucket } from '@aws-cdk/aws-s3';
 
 
 export class AwsStack extends cdk.Stack {
@@ -12,8 +13,9 @@ export class AwsStack extends cdk.Stack {
 	const BlogBucket = new s3.Bucket(this, 'Blog', {
 		websiteIndexDocument: 'index.html',
 		publicReadAccess: true
-		});	
+	});	
 
+	const LogBucket = Bucket.fromBucketName(this, 'LogBucket', 'cfnlogbucket-56454534');
 
 	const distribution = new cloudfront.CloudFrontWebDistribution(this, 'Distribution', {
 		//TODO: activate logging in existing cfnlog bucket
@@ -42,7 +44,11 @@ export class AwsStack extends cdk.Stack {
 				responseCode: 200,
 				responsePagePath: '/index.html'
 			},
-		]
+		],
+		loggingConfig: {
+			bucket: LogBucket,
+			prefix: 'jonny-rimek-blog'
+		}
 	});
 
 
