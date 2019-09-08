@@ -16,12 +16,19 @@ export class AwsStack extends cdk.Stack {
 
 
 	const distribution = new cloudfront.CloudFrontWebDistribution(this, 'Distribution', {
+		//TODO: activate logging in existing cfnlog bucket
 		originConfigs: [
 			{
-			s3OriginSource: {
-				s3BucketSource: BlogBucket
+				s3OriginSource: {
+					s3BucketSource: BlogBucket
 			},
-			behaviors : [ {isDefaultBehavior: true}]
+				behaviors : [ 
+					{
+						isDefaultBehavior: true,
+						compress: true,
+					}
+				], 
+
 			}
 		],
 		errorConfigurations: [
