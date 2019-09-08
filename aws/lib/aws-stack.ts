@@ -5,6 +5,7 @@ import cloudfront = require('@aws-cdk/aws-cloudfront');
 import route53 = require('@aws-cdk/aws-route53');
 import alias = require('@aws-cdk/aws-route53-targets');
 import { Bucket } from '@aws-cdk/aws-s3';
+import { HostedZone } from '@aws-cdk/aws-route53';
 
 
 export class AwsStack extends cdk.Stack {
@@ -58,9 +59,7 @@ export class AwsStack extends cdk.Stack {
 			distribution,
 		});
 
-		const zone = new route53.PublicHostedZone(this, 'HostedZone', {
-			zoneName: 'jonny-rimek.com'
-		  });
+		const zone = HostedZone.fromHostedZoneId(this, 'HostedZone', 'Z1PKIH7T9HAX77');
 
 		new route53.ARecord(this, 'AliasRecord', {
 			zone,
