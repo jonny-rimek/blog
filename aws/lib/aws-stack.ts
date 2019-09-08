@@ -58,6 +58,7 @@ export class AwsStack extends cdk.Stack {
 
 		//TODO: 
 		// create cloudfront aliase in route53 for ipv4 and ipv6 in cdk
+		// create acm in cdk
 
 		new s3deploy.BucketDeployment(this, 'DeployWebsite', {
 			source: s3deploy.Source.asset('../public'),
