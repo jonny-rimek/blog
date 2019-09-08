@@ -11,3 +11,13 @@ hugo new posts/POST_NAME
 ```
 hugo server -D
 ```
+
+#### deloyment: 
+
+```
+hugo 
+cd aws
+tsc
+cdk diff
+cdk deploy
+```
