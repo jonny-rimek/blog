@@ -1,6 +1,7 @@
 +++
-title = "Yet another programming blog"
-date = "2018-01-21"
+title = "Fearsetting for starting my business"
+date = "2019-09-13"
+draft = true
 +++
 
 Following Tim Ferriss's idea of [fearsetting](https://www.ted.com/talks/tim_ferriss_why_you_should_define_your_fears_instead_of_your_goals) I did just that for starting my own business.
