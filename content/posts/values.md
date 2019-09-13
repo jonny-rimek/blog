@@ -19,7 +19,7 @@ draft = true
 
 #### areas I want to avoid:
 
-- ads
+- advertisement
 
 #### business values:
 
@@ -34,12 +34,14 @@ draft = true
 
 
 #### business criteria
+
 - SaaS
 - B2B
 - bootstraped
 - has to contain atleast one of my interests
 
 #### avoid in a business:
+
 - B2C
 - any hardware product
 - publicly traded companies
