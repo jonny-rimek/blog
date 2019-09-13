@@ -3,6 +3,8 @@ title = "Yet another programming blog"
 date = "2018-01-21"
 +++
 
+Following Tim Ferriss's idea of [fearsetting](https://www.ted.com/talks/tim_ferriss_why_you_should_define_your_fears_instead_of_your_goals) I did just that for starting my own business.
+
 ### 1. What if I start wowmate.io?
 
 define what could go wrong | prevent | repair
