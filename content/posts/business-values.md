@@ -4,19 +4,6 @@ date = 2019-09-13
 draft = true
 +++ 
 
-#### interests:
-
-- privacy
-- security
-- aws/severless
-- bootstraped businesses
-- self improvement (from tech skills (vim<3)) to real life (working out))
-- mitigating climate change
-- human psychology
-- the brain
-- dogs
-- iceland
-
 #### areas I want to avoid:
 
 - advertisement
