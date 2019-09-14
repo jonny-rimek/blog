@@ -1,3 +1,7 @@
++++
+title: "My first company, wowmate.io"
+date: 14.09.19
+draft: true
 # wowmate.io a log aggregation and analysis SaaS for world of warcraft
 
 #### Idea:
@@ -21,7 +25,7 @@ Warcraftlogs also provides an API (afaik also for free), that allows other proje
 
 Outstanding features are that you can create you're own, query to analyze the data. The other one is that you can view a primitiv replay of the bossfight, that show the position of the players on a map and all combatlog related data at that time of the boss fight. This is pretty impressive feature and helps alot if you try to "debug" the bossfight. I'm also not quite sure how I could implement such a feature myself.
 
-#### My product.
+#### advantages of my product.
 
 The main advantages I hope to achieve are:
 
@@ -29,5 +33,26 @@ The main advantages I hope to achieve are:
 - better performance
 - ingame addon to display a summary of past logs
 - focus on privacy
+- different philosophie towards damage
+- no login for upload
+- combatlog is not tied to an specific account and can't be deleted
+- built in plugin system (saved queries)
+
+#### disadvantages
+
+- limited functionality in free
+
+
+#### technical implementation
+
+#### problems im facing
+
+#### fear setting
 
 ####  pvp as a feature?
+
+#### goal:
+
+release nmvp asap 
+
+competetive offering for next expension
