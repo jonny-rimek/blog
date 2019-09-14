@@ -1,6 +1,5 @@
 ---
 title: "About"
-draft: true
 ---
 
 My name is Jonny Rimek. I've been a software engineer for 3 years. 
@@ -21,4 +20,6 @@ I care alot privacy and security in general. In order to improve my privacy I us
 - dogs
 - iceland
 
+#### recruitment
 
+I'm not actively looking for a job right now, if you want to reach out anyway please check out some of my [expectations](https://gitlab.com/jrimek/job-requirements/) for a new job.
