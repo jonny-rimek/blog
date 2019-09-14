@@ -92,7 +92,11 @@
     justify-content: center;
     margin-bottom: 10px;
 
+<<<<<<< HEAD
     & + h2 {
+=======
+    &+ h2 {
+>>>>>>> master
       margin-top: -10px;
       margin-bottom: 20px;
     }

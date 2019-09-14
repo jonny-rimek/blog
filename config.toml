@@ -22,8 +22,8 @@ paginate = 5
 [languages]
   [languages.en]
     languageName = "English"
-    title = "Jonny Rimek"
-    subtitle = "a tech blog"
+    title = "Grasp Programming"
+#   subtitle = "by Jonny Rimek"
     keywords = ""
     copyright = ""
     menuMore = "Show more"
@@ -31,14 +31,14 @@ paginate = 5
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "Jonny Rimek"
+      logoText = "Grasp Programming"
       logoHomeLink = "/"
 
- #   [languages.en.menu]
- #     [[languages.en.menu.main]]
- #       identifier = "about"
- #       name = "About"
- #       url = "/about"
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
  #     [[languages.en.menu.main]]
  #       identifier = "showcase"
  #       name = "Showcase"
