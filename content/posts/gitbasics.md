@@ -1,5 +1,5 @@
 +++
-title = "git basics"
+title = "Git basics"
 date = "2018-02-09"
 tags = ["git"]
 +++

@@ -2,6 +2,7 @@ baseurl = "/"
 languageCode = "en-us"
 theme = "terminal"
 paginate = 5
+uglyURLs = true
 
 [params]
   # dir name of your blog content (default is `content/posts`)
@@ -22,8 +23,8 @@ paginate = 5
 [languages]
   [languages.en]
     languageName = "English"
-    title = "Jonny Rimek"
-    subtitle = "a tech blog"
+    title = "Grasp Programming"
+#   subtitle = "by Jonny Rimek"
     keywords = ""
     copyright = ""
     menuMore = "Show more"
@@ -31,14 +32,14 @@ paginate = 5
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "Jonny Rimek"
+      logoText = "Grasp Programming"
       logoHomeLink = "/"
 
- #   [languages.en.menu]
- #     [[languages.en.menu.main]]
- #       identifier = "about"
- #       name = "About"
- #       url = "/about"
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about.html"
  #     [[languages.en.menu.main]]
  #       identifier = "showcase"
  #       name = "Showcase"

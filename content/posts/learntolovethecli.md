@@ -1,5 +1,5 @@
 +++
-title = "learn to love the CLI"
+title = "Learn to love the CLI"
 date = "2018-01-31"
 tags = ["cli"]
 +++

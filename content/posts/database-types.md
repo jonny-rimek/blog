@@ -1,5 +1,5 @@
 ---
-title: "database types explained"
+title: "Database types explained"
 date: 2018-02-10T21:07:36+02:00
 tags: ["databases", "sql", "nosql"]
 ---
