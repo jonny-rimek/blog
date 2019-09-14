@@ -22,4 +22,6 @@ I care alot privacy and security in general. In order to improve my privacy I us
 
 #### recruitment
 
-I'm not actively looking for a job right now, if you want to reach out anyway please check out some of my [expectations](https://gitlab.com/jrimek/job-requirements/) for a new job.
+I'm not actively looking for a job right now, if you want to reach out anyway please check out some of my [expectations](https://gitlab.com/jrimek/job-requirements/) for a new job. My E-Mail is j.rimek@protonmail.com
+
+
