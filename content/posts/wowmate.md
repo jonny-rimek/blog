@@ -37,7 +37,7 @@ If I could achieve that and feature parity it would probably be enough to absorb
 
  - There will be an in-game addon that will display a summary of past logs for certain types of content and difficulty (similar to raider.io plugin)
 
- - People can opt to now show there logs public on the website and in the addon, even if they didn't upload the log.
+ - People can opt to not show there logs public on the website and in the addon, even if they didn't upload the log.
 
  - There will be a slight change to damage leaderboards, there won't be a % behind every log. Instead, there will be badges, think SC2 or Dota2 ranks. Also, I want to introduce a comparison like that for damage taken. Overall I want to but an emphasis on playing cleanly instead of maximizing for damage and ignoring everything else.
 
@@ -47,7 +47,7 @@ _How might wowmate.io be worse?_
 
 Free users will be limited compared to warcraftlogs.com because it is ad-free and a profit-oriented business.
 
-#### Problems im facing
+#### Problems I'm facing
 
 The main problem, in general, is my motivation and the ability to stick with it for longer than two months. I hope that the ball keeps rolling once I put the product out there.
 
@@ -59,21 +59,19 @@ The problems I see with the product are that World of Warcraft is a pretty old g
 
 The next problem is that it is a B2C business, which is not optimal for a bootstrapped business.
 
-#### WoW, a valid platform afterall?
+#### WoW, a valid platform after all?
 
 Over the years there were plenty of 3rd party solutions built around World of Warcraft.
 
-A couple of years a competitor for wowprogress.com took the wow community by storm, raider.io. They allow for a simple and intuitive way to check the progress of other players. Their premium rewards don't over any real benefit yet they managed to have over 4.000 patreons, let's say they have 5k MRR.
+A couple of years a competitor for wowprogress.com took the wow community by storm, raider.io. They allow for a simple and intuitive way to check the progress of other players. Their premium rewards don't offer any real benefit yet they managed to have over 4.000 (at least 1$ per)patreons, let's say they have 5k MRR.
 
-To optimize their rotation and in the and damage output an [open source project](https://github.com/simulationcraft/simc) emerged that allows to specify a rotation (Action Priority List - APL) and compare it to others, thus allowing them to find the mathematically perfect rotation. It's written in C++ and setting up the client was always a huge pain and it was hard to use, e.g. you had to look up some id for an item. Entering the stage is raidbots, it is running simulationcraft
+To optimize their damage output an [open source project](https://github.com/simulationcraft/simc) emerged that allows users to specify a rotation (Action Priority List - APL) and compare it to others, thus allowing them to find the theoretically perfect rotation. It's written in C++ and setting up and using the client was always a huge pain, e.g. you had to look up some id for an item. Entering the stage is raidbots, it is running simulationcraft
 in the cloud with a convenient UI. It had 30k $ MMR in the past and is now at 5.7k patreons with 3$ for the smallest tier.
 
-#### Whats next?
+#### What's next?
 
-I have my AWS infrastructure figured out and already had a proof of concept at the beginning of the year. I want to build a very minimal MVP (only damage summary and a client to upload the log). Afterwards, I want to engage the WoW community and gather feedback early on. Something that I wanted to push back, but will force myself to do as early as possible.
+I have my AWS infrastructure figured out and already had a proof of concept at the beginning of the year. I want to build a very minimal MVP (only damage summary and a client to upload the log). Afterward, I want to engage the WoW community and gather feedback early on. Something that I wanted to push back, but will force myself to do as early as possible.
 
 #### Goal:
 
 I want to release my MVP as soon as possible, get feedback early on and by the time the next expansion is coming around I want to have a competitive offering.
-
-
