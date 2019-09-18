@@ -22,7 +22,7 @@ It is important to note that the website is not a profit-oriented product, rathe
 
 Warcraftlogs also provides an API (afaik also for free), that allows other projects to access its data. This led to awesome opensource tools like WoWAnalyzer.
 
-Outstanding features are that you can create you're own, query to analyze the data. The other one is that you can view a primitive replay of the boss fight, that show the position of the players on a map and all combat log related data at that time of the boss fight. This is a pretty impressive feature and helps a lot if you try to "debug" the boss fight. I'm also not quite sure how I could implement such a feature myself.
+Outstanding features are that you can create you're own query to analyze the data. The other one is that you can view a primitive replay of the boss fight, that show the position of the players on a map and all combat log related data at that time of the boss fight. This is a pretty impressive feature and helps a lot if you try to "debug" the boss fight. I'm also not quite sure how I could implement such a feature myself.
 
 #### How is my product different?
 
