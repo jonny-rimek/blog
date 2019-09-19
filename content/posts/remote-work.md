@@ -10,7 +10,7 @@ pros:
     - better for the environment
     - more time for other thing like working out, cleaning up my apartment, which in turn frees me up for more productive things and improves my general well being
 
-- 
+- lower probability to get sick, because you are exposed to less sick people during commute and in the office
 
 cons:
 
