@@ -1,3 +1,9 @@
+---
+title: "Debug slow queries"
+date: 2019-12-10T21:07:36+02:00
+tags: ["databases", "sql"]
+---
+
 #How to debug slow queries
  
  go inside the container
