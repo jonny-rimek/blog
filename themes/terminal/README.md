@@ -165,6 +165,6 @@ I'd be happy to know more about you and what you are doing. If you want to share
 
 ## Licence
 
-Copyright © 2019 Radosław Kozieł ([@panr](https://twitter.com/panr))
+Copyright © 2021 Radosław Kozieł ([@panr](https://twitter.com/panr))
 
 The theme is released under the MIT License. Check the [original theme license](https://github.com/panr/hugo-theme-terminal/blob/master/LICENSE.md) for additional licensing information.
