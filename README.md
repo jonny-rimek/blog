@@ -14,10 +14,4 @@ hugo server -D
 
 #### deloyment: 
 
-```
-hugo 
-cd aws
-tsc
-cdk diff
-cdk deploy
-```
+push to mater, the github workflow takes care of publishing
