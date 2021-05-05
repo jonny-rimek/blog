@@ -25,6 +25,7 @@ where possible.
 - the brain
 - dogs
 - iceland
+- meditation
 
 #### recruitment
 
