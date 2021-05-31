@@ -70,8 +70,38 @@ and [python](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-python-r
 ## Locally testing APIs
 
 For both API Gateway versions SAM offers the possibility to stand up the entire API with all lambda functions attached.
-This allows us to call the API route in our Webbrowser or let our local frontend talk to our local API.
+This allows us to call the API route in our Webbrowser or let our local frontend talk to our local API. The command is
+`sam-beta-cdk local start-api`
+
+Lambdas that are fronted by an API Gateway I would always test by calling the API endpoint, instead of invoking the 
+lambda directly and passing in the API Gateway event. Testing APIs is a well established problem with a rich eco-system
+of tools.
+
+Personally, I opted to use AWS Synthetics to continuously test my API in production and on demand during the CI.
+There are two things in that approach. 
+
+First, in order to manually invoke the canary the schedule needs to be _once_
+and in production it needs to be a rate at which the canary should be invoked. It is not possible to invoke the 
+canary via the SDK, when it runs every X minutes.
+
+Second, invoking the canary is an asynchronous API call. You need to check the result of the canary in a dedicated step.
+
+## Automatically testing your lambdas locally and in CI
+
+We now have a way to automatically test our API lambdas and manually test the other lambdas, but in order to produce reliable
+software we want automated tests for all our lambdas. This is where `sam-beta-cdk local start-lambda` comes into play.
+This command simulates the API of the Lambda service locally, allowing us to invoke the lambda via the SDK and assert on the 
+response of the lambda. We can also reuse the same test code in CI as we use locally, all we need to do is to tell the SDK
+to use localhost:3001 as an endpoint. You can see an example python example 
+[here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-automated-tests.html)
+and a go example [here](https://github.com/jonny-rimek/wowmate/blob/b3d7dd5ff9e40a6bda503a93c44356957a71c1f1/services/test/upload-integration-test/integration-test.go#L269).
+
+To decide if the test is running in the ci or locally you can check if the CI environment variable exist, this works for GitHub Actions,
+make sure it works for your CI provider as well.
+
+## Conclusion
+
+Testing your CDK lambdas locally got way better with the new sam-beta-cdk, but it's still one of the areas where serverless is
+lacking, when it comes to tools and developer experience.
 
 
-
-## integration tests locally and in ci
