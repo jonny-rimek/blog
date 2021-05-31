@@ -12,6 +12,6 @@ hugo new posts/POST_NAME
 hugo server -D
 ```
 
-#### deloyment: 
+#### deployment: 
 
-push to mater, the github workflow takes care of publishing
+push to master, the GitHub workflow takes care of publishing
