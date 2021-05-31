@@ -47,11 +47,11 @@ more than one lambda, all available lambdas are listed.
 ## Lambda is event driven
 
 So far testing lambda seems trivial, but we miss one important piece. Unlike an EC2 instance, lambda doesn't
-exist on it's on, it always runs in response to a certain event. That event can be anything from an API Call
+exist on its own, it always runs in response to a certain event. That event can be anything from an API Call
 with API Gateway or a new file in S3 and much more. In order to accurately test our lambda, we need to pass
 in an event. This was the part that confused me the most when I was new to AWS, luckily SAM has our back
 again. With `sam local generate-event` you can create events from 24 services. Once you created the event,
-saved it to a file and updated the values to reflect your needs you can invoke the lambda with the event
+saved it to a file and updated the values to reflect your needs. You can invoke the lambda with the event
 using the following command `sam-beta-cdk local invoke STACKNAME/LOGICAL ID -e FILENAME`. Things get a bit
 tricky if you have nested events, e.g. a s3 event inside a sqs event. In this case you have to escape the
 nested event, you can see an example 
@@ -59,9 +59,9 @@ nested event, you can see an example
 
 ## Building/compiling the lambda source code
 
-Every time you run `sam-beta-cdk local invoke`, `start-api` or `start-lambda` the cdk is synthesized, that 
+Every time you run `sam-beta-cdk local invoke`, `start-api` or `start-lambda` the cdk code is synthesized, that 
 means it always reflects the latest changes in your cdk code, but it doesn't automatically mean that it contains
-the latest code of your lambda. If you use a compiled language like golang, you need to recompile the binary before
+the latest code of your lambda code. If you use a compiled language like golang, you need to recompile the binary before
 running it again locally. Luckily there is a CDK [construct](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-go-readme.html) 
 that compiles the go code during the synthesizing step, which allows us to skip the extra recompiling step.
 Similar constructs exist for [nodejs](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-nodejs-readme.html) 
@@ -73,12 +73,12 @@ For both API Gateway versions SAM offers the possibility to stand up the entire 
 This allows us to call the API route in our Webbrowser or let our local frontend talk to our local API. The command is
 `sam-beta-cdk local start-api`
 
-Lambdas that are fronted by an API Gateway I would always test by calling the API endpoint, instead of invoking the 
+Lambdas that are fronted by an API Gateway, I would always test by calling the API endpoint, instead of invoking the 
 lambda directly and passing in the API Gateway event. Testing APIs is a well established problem with a rich eco-system
 of tools.
 
 Personally, I opted to use AWS Synthetics to continuously test my API in production and on demand during the CI.
-There are two things in that approach. 
+There are two things to look out for in that approach. 
 
 First, in order to manually invoke the canary the schedule needs to be _once_
 and in production it needs to be a rate at which the canary should be invoked. It is not possible to invoke the 
@@ -96,7 +96,7 @@ to use localhost:3001 as an endpoint. You can see an example python example
 [here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-automated-tests.html)
 and a go example [here](https://github.com/jonny-rimek/wowmate/blob/b3d7dd5ff9e40a6bda503a93c44356957a71c1f1/services/test/upload-integration-test/integration-test.go#L269).
 
-To decide if the test is running in the ci or locally you can check if the CI environment variable exist, this works for GitHub Actions,
+To decide if the test is running in the CI or locally you can check if the CI environment variable exist, this works for GitHub Actions,
 make sure it works for your CI provider as well.
 
 ## Conclusion
