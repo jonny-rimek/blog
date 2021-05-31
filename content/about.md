@@ -2,9 +2,12 @@
 title: "About"
 ---
 
-My name is Jonny Rimek. I've been a software engineer for 3 years. 
+My name is Jonny Rimek. I've been a software engineer/site reliability engineer for 5 years. 
 
-Currently, I work at [Healy GmbH](https://www.healyworld.net/in/wellness/) and help grow and optimise their distribution platform. In my free time I build my own bootstraped business [wowmate.io](https://wowmate.io). It's a SaaS that helps World of Warcraft players analyze their log files in order to improve.
+Currently, I work at [Healy GmbH](https://www.healyworld.net/in/wellness/) 
+as a site reliability engineer. In my free time I build my own bootstrapped 
+business [wowmate.io](https://wowmate.io). It's a SaaS that helps World of 
+Warcraft players analyze their log files in order to improve.
 
 I care a lot about privacy and security in general. In order to improve my 
 privacy I use Ubuntu as operating system, Signal as a messenger, 

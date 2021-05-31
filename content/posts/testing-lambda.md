@@ -27,3 +27,51 @@ In practice that means we deploy all of our resources to a dev account and point
 lambdas to real resources in AWS. CDK is responsible for provisioning our infrastructure, and we
 use SAM to locally test our lambdas. You could also drop CDK and use SAM to provision your 
 infrastructure, but I'm sick of messing around with yaml files, YMMV.
+
+## Using CDK and SAM together
+
+AWS SAM by default works with CloudFormation, which means it supports CDK out of the Box, 
+but the Developer Experience is not good. To improve the local experience with CDK, the SAM
+Team added native 
+[support](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-cdk.html) 
+for CDK. At the time of writing this it is still in public review.
+
+## Manually invoking a lambda locally
+
+Instead of deploying everything and waiting for it to finish and then manually testing the behaviour
+the first step is to simply manually test locally. This is already a huge improvement as our feedback
+loop goes from 2-3 minutes to a couple of seconds. To run a lambda locally execute the following command
+`sam-beta-cdk local invoke STACKNAME/LOGICAL ID`, if you only run `sam-beta-cdk local invoke` and you have
+more than one lambda, all available lambdas are listed.
+
+## Lambda is event driven
+
+So far testing lambda seems trivial, but we miss one important piece. Unlike an EC2 instance, lambda doesn't
+exist on it's on, it always runs in response to a certain event. That event can be anything from an API Call
+with API Gateway or a new file in S3 and much more. In order to accurately test our lambda, we need to pass
+in an event. This was the part that confused me the most when I was new to AWS, luckily SAM has our back
+again. With `sam local generate-event` you can create events from 24 services. Once you created the event,
+saved it to a file and updated the values to reflect your needs you can invoke the lambda with the event
+using the following command `sam-beta-cdk local invoke STACKNAME/LOGICAL ID -e FILENAME`. Things get a bit
+tricky if you have nested events, e.g. a s3 event inside a sqs event. In this case you have to escape the
+nested event, you can see an example 
+[here](https://github.com/jonny-rimek/wowmate/blob/b28ec987940712ac626b9139e3803a42fdf35bf2/services/test/upload-integration-test/insertKeysToDynamodbEvent.json).
+
+## Building/compiling the lambda source code
+
+Every time you run `sam-beta-cdk local invoke`, `start-api` or `start-lambda` the cdk is synthesized, that 
+means it always reflects the latest changes in your cdk code, but it doesn't automatically mean that it contains
+the latest code of your lambda. If you use a compiled language like golang, you need to recompile the binary before
+running it again locally. Luckily there is a CDK [construct](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-go-readme.html) 
+that compiles the go code during the synthesizing step, which allows us to skip the extra recompiling step.
+Similar constructs exist for [nodejs](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-nodejs-readme.html) 
+and [python](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-python-readme.html)
+
+## Locally testing APIs
+
+For both API Gateway versions SAM offers the possibility to stand up the entire API with all lambda functions attached.
+This allows us to call the API route in our Webbrowser or let our local frontend talk to our local API.
+
+
+
+## integration tests locally and in ci
