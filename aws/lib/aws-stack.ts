@@ -29,7 +29,6 @@ export class AwsStack extends cdk.Stack {
 							compress: true,
 						}
 					], 
-
 				}
 			],
 			errorConfigurations: [
@@ -65,9 +64,11 @@ export class AwsStack extends cdk.Stack {
 		// create acm in cdk
 
 		new s3deploy.BucketDeployment(this, 'DeployWebsite', {
-			source: s3deploy.Source.asset('../public'),
+			sources: [
+				s3deploy.Source.asset('../public'),
+			],
 			destinationBucket: BlogBucket,
-			distribution,
+			distribution: distribution,
 		});
 	}
 }
