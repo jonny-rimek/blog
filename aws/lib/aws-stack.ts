@@ -56,7 +56,11 @@ export class AwsStack extends cdk.Stack {
 			}
 		});
 
-		//TODO: 
+		const cfnDist = distribution.node.defaultChild as cloudfront.CfnDistribution;
+		cfnDist.addPropertyOverride('DistributionConfig.Origins.0', {
+			DomainName: BlogBucket.bucketDomainName,
+		});
+		//TODO:
 		// create cloudfront aliase in route53 for ipv4 and ipv6 in cdk
 		// create acm in cdk
 
